@@ -1,0 +1,61 @@
+.dashboardPage{
+    padding-top: 20px;
+}
+
+.dashboardHeading{
+    font-weight: 500;
+    text-align: center;
+}
+
+.actionBlock{
+    display: grid;
+    grid-template-columns: 150px auto;
+}
+
+.actionGrid{
+    width: 150px;
+}
+
+.actions{
+    background-color: rgb(194, 194, 194);
+    position: fixed;
+    top: 65px;
+    width: 150px;
+    height: 100vh;
+    box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.507);
+}
+
+.action{
+    padding: 10px 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.action:hover{
+    background-color: grey;
+}
+
+.categoriesContainer{
+    position: relative;
+}
+
+.categoriesContent{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.categoriesContent > div{
+    padding: 7px;
+    cursor: pointer;
+}
+
+.categoriesContent div:hover{
+    background-color: grey;
+}
+
+.categoriesContainer:hover .categoriesContent{
+    max-height: 200px;
+    opacity: 1; 
+}

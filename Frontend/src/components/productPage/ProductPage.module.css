@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.productPage{
+    width: 100%;
+    background-color: white;
+}
+
+.gridDiv{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+}
+
+.gridDiv > *{
+    padding: 10px;
+}
+
+.gridLeft{
+    position: sticky;
+    width:100%;
+    height: calc(100vh - 65px);
+    top: 65px;
+    left: 0;
+}
+
+.actionBtnContainer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.actionBtn{
+    padding: 20px;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+    width: 40%;
+    cursor: pointer;
+    display: flex;
+    column-gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartBtn{
+    color: #494949;
+    border: 1px solid #494949b9;
+}
+
+.cartBtn:hover{
+    border: 1px solid #6d6d6d;
+    background-color: #6d6d6d;
+    color: white;
+}
+
+.buyBtn{
+    background-color: var(--btn-color);
+}
+
+.buyBtn:hover{
+    background-color: var(--btn-color-hover);
+}
+
+.gridRight > div{
+    margin-bottom: 25px;
+}
+
+.gridRight div > *{
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    letter-spacing:0.6px;
+}
+
+.productTitle{
+    font-size: 1.55rem;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.priceDiv{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.priceDiv{
+    font-weight: 400;
+}
+
+.usualPrice{
+    text-decoration: line-through;
+    color: #545454;
+}
+
+.discountPercentage{
+    color: #388e3c;
+}
+
+.aboutGrid{
+    display: grid;
+    grid-template-columns: minmax(max-content, 120px) auto;
+    column-gap: 10px;
+}
+
+.stocksDiv{
+    margin: 40px 0;
+}
+
+.deliveryInfo{
+    font-style: italic;
+    color: #6d6d6d;
+    font-weight: 600;
+    cursor: default;
+}
+
+.overviewDiv, .highlightDiv{
+    margin: 3rem 0 10px 0;
+    color: rgb(53, 53, 53);
+}
+
+.heading{
+    font-size: 1rem;
+    color: var(--heading-color);
+    font-weight: 600;
+    letter-spacing: 0.75px;
+}
+
+.overviewContent{
+    font-family: "Inter", sans-serif !important;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.listGrid{
+    display: flex;
+    align-items: baseline;
+    column-gap: 10px;
+}
+
+.listDot{
+    font-size: 1.5rem;
+    color: #737373;
+}
+
+.featureContent{
+    font-family: "Inter", sans-serif !important;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+li::marker{
+    color: #737373;
+}
+
+@media (max-width: 899px){
+    .gridDiv{
+        grid-template-columns: 100%;
+    }
+
+    .gridLeft{
+        position: static;
+        height: auto;
+    }
+
+    .highlightDiv{
+        padding-bottom: 50px;
+    }
+
+    .actionBtnContainer{
+        position: fixed;
+        width: calc(100% - 20px);
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+
+    .actionBtn{
+        width: 100%;
+    }
+
+    .aboutGrid{
+        grid-template-columns: 100%;
+    }
+
+    .heading{
+        padding-bottom: 10px;
+    }
+}

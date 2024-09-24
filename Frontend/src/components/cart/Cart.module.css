@@ -1,0 +1,118 @@
+.cartPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.cartHeading{
+    margin: 2rem;
+    color: rgb(34, 34, 34);
+    font-size: 2.2rem;
+}
+
+.cartItemContainer{
+    display: grid;
+    row-gap: 2rem;
+    margin-top: 3rem;
+}
+
+.cartItem{
+    border-top: 1px solid rgba(0, 0, 0, 0.089) ;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.089) ;
+    display: flex;
+    gap: 2rem;
+    padding: 7px;
+    min-width: 70vw;
+    position: relative;
+}
+
+.cartItemImageContainer{
+    width: 150px;
+    height: 150px;
+    border: rgba(0, 0, 0, 0.100);
+}
+
+.cartItemImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cartItemDetail{
+    padding-right: 2.7rem;
+}
+
+.cartItemTitle{
+    text-transform: capitalize;
+}
+
+.quantityButtons{
+    display: inline-block;
+    padding: 0.3rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.132);
+    margin: 15px 0;
+}
+
+.quantityButton{
+    border: 0;
+    background-color: transparent;
+    margin: 0 20px;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.701);
+    cursor: pointer;
+}
+
+.quantityButton:hover{
+    color: rgb(0, 0, 0);
+}
+
+.cartItemPrice{
+    color: rgba(0, 0, 0, 0.701);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.checkOutSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.itemsTotalAmount{
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.849);
+}
+
+.checkOutButton{
+    border: 0;
+    color: white;
+    background-color: #e07f66;
+    font-size: 1rem;
+    padding: 0.7em;
+    cursor: pointer;
+}
+
+.checkOutButton:hover{
+    background-color: #da5f41;
+}
+
+.noItemHeading{
+    font-weight: 400;
+    font-size: 4rem;
+    color: var(--btn-color-hover);
+    margin-top: 180px;
+    transform: translateY(-50%);
+}
+
+.deleteProduct{
+    font-size: 2rem;
+    color: var(--btn-color);
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.deleteProduct:hover{
+    color: var(--btn-color-hover);
+}

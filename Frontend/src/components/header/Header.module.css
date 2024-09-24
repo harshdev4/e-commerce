@@ -1,0 +1,175 @@
+.headerBlock{
+    display: grid;
+    grid-template-columns: 100px 0.5fr minmax(max-content, 0.1fr) max-content;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.backArrow{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+}
+
+.logoContainer{
+    width: 100%;
+}
+
+.logoImage{
+    width: 100%;
+    filter: saturate(1.2);
+}
+
+.searchBlock{
+    position: relative;
+}
+
+.magnifyIcon{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.603);
+    cursor: pointer;
+}
+
+.magnifyIconSm{
+    color: rgba(0, 0, 0, 0.603);
+    cursor: pointer;
+    display: none;
+    font-size: 18px;
+}
+
+.searchBar{
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border-radius: 10px;
+    height: 100%;
+    font-size: 18px;
+    background-color: #ffffffe7;
+    color: rgba(0, 0, 0, 0.603);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.authBtnBlock{
+    position: relative;
+}
+
+.authBtnBlock *{
+    color: rgba(0, 0, 0, 0.603);
+    cursor: pointer;
+}
+
+.profileIconContainer{
+    width: 21px;
+}
+
+.profileIcon{
+    color: rgba(0, 0, 0, 0.603);
+}
+
+.loginBtn{
+    border: 0;
+    background-color: transparent;
+    font-size: 20px;
+    margin: 0 8px;
+    font-weight: 500;
+}
+
+.chevron{
+    transition: transform 0.3s ease-in-out;
+}
+
+.hoverLoginMenu{
+    position: absolute;
+    width: 10rem;
+    display: none;
+    padding-top: 8px;
+}
+
+.menuContainer{
+    display: grid;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 7px 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.288);
+}
+
+.hoverLoginMenu > .menuContainer > *{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.hoverLoginMenu > .menuContainer >*:hover{
+    color: #e08872;
+}
+
+.authBtnBlock:hover .hoverLoginMenu, .hoverLoginMenu:hover{
+    display: grid;
+}
+
+.authBtnBlock:hover .chevron{
+    transform: rotate(-180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart{
+    color: rgba(0, 0, 0, 0.603);
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.cartBlock span{
+    color: rgba(0, 0, 0, 0.603);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+@media (min-width:599px) and (max-width:800px){
+    .headerBlock{
+        grid-template-columns: 100px 0.75fr minmax(max-content, 0.1fr) max-content;
+    }
+}
+
+@media (max-width:699px){
+    .hideLabel{
+        display: none;
+    }
+    .chevron{
+        margin-left: 7px;
+    }
+
+    .headerBlock{
+        grid-template-columns: 80px max-content minmax(max-content, 0.1fr) max-content;
+        justify-items: center;
+    }
+
+    .searchBlock{
+        display: none;
+    }
+
+    .magnifyIconSm{
+        display: block;
+    }
+
+    .loginBtn{
+        font-size: 18px;
+    }
+
+    .cart{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 800px){
+    .searchBar{
+        width: calc(100% + 30px);
+    }
+}

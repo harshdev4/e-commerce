@@ -1,0 +1,27 @@
+.productTable{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.productTable th{
+    padding: 7px 10px;
+}
+
+.productTable td{
+    padding: 3px 0;
+    text-align: center;
+}
+
+.productImg{
+    width: 100px;
+}
+
+.disableAction{
+    color: black;
+    display: block;
+    text-align: center;
+}
+
+.delete{
+    color: rgb(245, 77, 77);
+}

@@ -1,0 +1,22 @@
+.userTable{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.userTable th{
+    padding: 7px 10px;
+}
+
+.userTable td{
+    padding: 3px 5px;
+}
+
+.disableAction{
+    color: black;
+    display: block;
+    text-align: center;
+}
+
+.delete{
+    color: rgb(245, 77, 77);
+}

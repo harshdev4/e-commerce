@@ -1,0 +1,42 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --btn-color: #e07f66;
+    --heading-color: #c5492b;
+    --btn-color-hover: #da5f41;
+    --lightGrey-color: rgba(0, 0, 0, 0.781);
+    --lightBorder-color:rgba(0, 0, 0, 0.199);
+    --font-size-large: 18px;
+    --spacing-small: 10px;
+  }
+
+.paddingSide{
+    padding: 0 30px;
+}
+
+.header{
+    background-color: #f3aa98;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.253);
+    z-index: 9999;
+}
+
+.removeLinkEffect{
+    text-decoration: none;
+    color: unset;
+}
+
+.heading{
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+}
+
+@media (max-width:550px){
+    .paddingSide{
+        padding: 0 10px;
+    }
+}

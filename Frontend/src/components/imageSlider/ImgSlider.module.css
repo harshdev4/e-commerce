@@ -1,0 +1,91 @@
+.imgslider {
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider {
+    border: 1px solid var(--lightBorder-color);
+    width: 100%;
+    height: 26rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .image{
+    width: 100%;
+    height: 26rem;
+    object-fit: cover;
+  }
+
+  
+  .imageContainer {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: auto;
+    transition: left 0.7s ease, right 0.3s ease;
+    width: 100%;
+  }
+
+  .slideBtnLeft, .slideBtnRight{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.7rem;
+    color: rgba(53, 53, 53, 0.863);
+    cursor: pointer;
+    padding: 7px;
+  }
+
+  .slideBtnLeft{
+    left: 0;
+  }
+
+  .slideBtnRight{
+    right: 0;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 10px;
+  }
+  
+  .imgWL {
+    position: relative;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .imageLabel {
+    position: absolute;
+    left: 0;
+    color: white;
+    text-shadow: 0 0 5px black;
+    padding: 5px;
+  }
+
+  .positionDotContainer{
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .positionDot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #35353578;
+  }
+
+  @media (max-width: 399px) {
+    .slider, .image{
+      height: 22rem;
+    }
+}

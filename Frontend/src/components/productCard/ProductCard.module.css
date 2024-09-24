@@ -1,0 +1,51 @@
+.product{
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 27%;
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgb(107, 107, 107);
+    overflow: hidden;
+    background-color: white;
+}
+
+.productImageContainer{
+    width: 100%;
+    user-select: none;
+}
+
+.productImageContainer img{
+    width: 100%;
+}
+
+.productInfoContainer{
+    padding: 10px
+}
+
+.productPriceContainer{
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.productUsualPriceContainer h3{
+    font-weight: 500;
+    text-decoration:line-through;
+    color: rgb(102, 101, 101);
+    font-size: 0.95rem;
+}
+
+.productOfferPriceContainer h3{
+    font-weight: 500;
+}
+
+.dicountPercent{
+    color: #388e3c;
+    font-weight: 500;
+}
+
+@media (max-width:899px){
+    .product{
+        width: 16rem;
+    }
+}

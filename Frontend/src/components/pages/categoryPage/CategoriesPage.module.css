@@ -1,0 +1,23 @@
+.productArea{
+    margin-top: 20px;
+}
+
+.productContainer{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.noItemDiv{
+    height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.noItem{
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--heading-color);
+}

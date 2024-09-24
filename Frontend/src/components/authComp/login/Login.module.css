@@ -1,0 +1,132 @@
+.loginPage{
+    min-width: 100vw;
+    height: calc(100dvh - 65px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginContainer{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    width: 60%;
+    min-width: 330px;
+    height: 70vh;
+    max-height: 800px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.363);
+}
+ 
+.coloredHalf{
+    background-color: #db7e67e0;
+    color: white;
+    padding: 2rem 2rem;
+}
+
+.loginHeading{
+    font-size: 2.2rem;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.563);
+    margin-bottom: 1rem;
+}
+
+.authForm{
+    max-width: 300px;
+}
+
+.inputHalf{
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.authInputField{
+    display: block;
+    width: 100%;
+    padding: 7px;
+    font-size: 1.1rem;
+    border-radius: 7px;
+    border: 1px solid rgb(187, 185, 185);
+    background-color: rgba(228, 228, 228, 0.205);
+    margin-bottom: 15px;
+    outline: 0;
+}
+
+.authInputField:focus{
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #db7e67;
+    background-color: rgb(250, 250, 250);
+}
+
+.authSubmitBtn{
+    width: 100%;
+    padding: 7px;
+    font-size: 1.1rem;
+    background-color: #db7e67e0;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.authSubmitBtn:hover{
+    background-color: #c5674f;
+}
+
+.passwordField{
+    position: relative;
+    /* width: fit-content; */
+}
+
+.passwordField > input{
+    padding-right: 45px;
+}
+
+.eyeSlash{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #757575;
+    padding: 5px;
+}
+
+.forgotPassword{
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 7px;
+    text-align: right;
+    color: #c5674f;
+}
+
+.newUser{
+    text-align: center;
+}
+
+.askingHeading{
+    color: rgba(0, 0, 0, 0.747);
+    font-weight: 500;
+}
+
+.createAccountLink{
+    color: #c5674f;
+}
+
+@media (min-width: 700px) and (max-width: 959px){
+    .loginContainer{
+        width: 80%;
+    }
+}
+
+@media (max-width: 699px){
+    html{
+        font-size: 13.5px;
+    }
+    .loginContainer{
+        width: 80%;
+        grid-template-columns: 100%;
+        grid-template-rows: 155px auto;
+    }
+}

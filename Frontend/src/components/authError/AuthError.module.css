@@ -1,0 +1,28 @@
+.errorAlertContainer{
+    position: fixed;
+    animation: drop 0.5s ease forwards;
+    width: 80%;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+.errorAlert{
+    background-color: rgb(230, 55, 55);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+}
+
+@keyframes drop {
+    0%{
+        top: -70%;
+    }
+    100%{
+        top: 70px;
+    }
+}
+
+.cross{
+    font-size: 23px;
+    cursor: pointer;
+}
