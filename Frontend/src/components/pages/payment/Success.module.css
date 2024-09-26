@@ -1,0 +1,68 @@
+.successPage{
+    width: max-content;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.celebrationDiv{
+    margin-top: 50px;
+    padding: 30px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 0 10px rgb(170, 170, 170);
+    background-color: white;
+    border-radius: 12px;
+    animation: animate 0.8s;
+}
+
+.successImgContainer{
+    width: 200px;
+    height: 200px;
+}
+
+.successImg{
+    width: 100%;
+    height: 100%;
+}
+
+.thnkMsg{
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: rgb(43, 43, 43);
+}
+
+.btnContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.btn{
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.orderBtn{
+    border: 1px solid rgb(124, 123, 123);
+}
+
+.continueBtn{
+    color: white;
+    background-color: #ff613e;
+}
+
+@keyframes animate {
+    0%{
+        transform: scale(0);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

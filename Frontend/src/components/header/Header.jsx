@@ -18,7 +18,7 @@ const Header = () => {
     <>
       <div className="paddingSide header">
         <div className={styles.headerBlock} style={{marginLeft: location.pathname != '/' ? '3rem' : '0'}}>
-        {location.pathname!='/' && <i className={`${styles.backArrow} fa-solid fa-arrow-left`} onClick={()=>navigate(-1)}></i>}
+        {location.pathname!='/' && location.pathname!='/payment/success' && location.pathname!='/payment/cancel' && <i className={`${styles.backArrow} fa-solid fa-arrow-left`} onClick={()=>navigate(-1)}></i>}
           <Link to='/'>
             <div className={styles.logoContainer}>
               <img

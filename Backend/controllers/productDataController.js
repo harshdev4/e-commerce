@@ -1,6 +1,10 @@
 const path = require('path');
 const productModel = require('../models/product');
+const userModel = require('../models/User');
+const orderModel = require('../models/order');
 const fs = require('fs');
+require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 const deleteFiles = (files, origin) => {
     if (origin === 'addProduct') {
@@ -112,8 +116,6 @@ exports.getNewProducts = async (req, res) => {
 
 exports.getProductsByCategory = async (req, res) => { 
     const {category} = req.params;
-    console.log(category);
-    
     try {
         const products = await productModel.find({category: { $regex: category, $options: 'i' }});
         res.status(200).json({message: 'new product get success', products});
@@ -127,6 +129,25 @@ exports.getProductById = async (req, res) =>{
      
     try {
         const product = await productModel.findById(productId);
+        if (product) {
+            res.status(200).json({message: 'Product found', product});
+        }
+        else{
+            res.status(404).json({message: 'Product not found',});
+        }
+    } catch (error) {
+        console.log(error);
+        
+        res.status(500).json({message: 'Server error'});
+    }
+}
+
+exports.getProductByIds = async (req, res) =>{
+    let {productId} = req.params;
+    productId = productId.split(',');
+     
+    try {
+        const product = await productModel.find({_id : {$in:productId}});
         if (product) {
             res.status(200).json({message: 'Product found', product});
         }
@@ -178,3 +199,68 @@ exports.search = async (req, res)=>{
         res.status(500).json({ message: 'Server error' });
     }
 }
+
+exports.payment = async (req, res) => {
+    const { products, email } = req.body;
+    
+    try {
+        const line_items = products.map(product => ({
+            price_data: {
+                currency: 'inr',
+                product_data: {
+                    name: product.name,
+                },
+                unit_amount: product.offerPrice * 100,
+            },
+            quantity: product.quantity,
+        }));
+
+        const productIds = products.map(product => product._id).join(',');
+
+        const session = await stripe.checkout.sessions.create({
+            line_items,
+            mode: 'payment',
+            success_url: `http://localhost:3000/api/product/successPayment/?productIds=${productIds}&session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: 'http://localhost:5173/payment/cancel',
+            metadata: {
+                productIds: productIds,
+            },
+            customer_email: email
+        });
+
+        res.status(200).json({ message: 'payment', session });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'server error' });
+    }
+};
+
+exports.successPayment = async(req, res)=>{
+    let {productIds, session_id} = req.query;
+    try {
+        const session = await stripe.checkout.sessions.retrieve(session_id);
+        const user = await userModel.findById(req.user.userId).populate('cart.product');
+        let products;
+        productIds = productIds.split(',');
+        products = user.cart.filter(item => productIds.includes(item.product._id.toString()));
+
+        const orderItems = products.map(item => ( {product: item.product._id, name: item.product.name, quantity: item.quantity, price: item.product.offerPrice*item.quantity}))
+        const shippingAddress = {
+            street: user.address.street,
+            city: user.address.city,
+            postalCode: user.address.postalCode,
+        }
+        const paymentMethod = "Card";
+        const shippingPrice = 0;
+        const totalPrice = session.amount_total;
+        const isDelivered = false;
+        const deliveredAt = new Date(Date.now() + 4*24*60*60*1000);
+        const orders = await orderModel.create({user: user._id, orderItems, shippingAddress, paymentMethod, shippingPrice, totalPrice, isDelivered, deliveredAt});
+        res.cookie('pS', true);
+        res.redirect(`http://localhost:5173/payment/success/${session.metadata.productIds}`);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'server error' });
+    }
+}
+ 

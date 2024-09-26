@@ -206,6 +206,15 @@ export const getProductById = async (productId, setProductData)=>{
   }
 }
 
+export const getProductByIds = async (productId, setProductData)=>{
+  try {
+    const response = await api.get(`/api/product/getProductByIds/${productId}`);
+    setProductData(response.data.product);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export const setCartItem = async (cartItem)=>{
   try {
     const response = await api.post(`/api/user/setCartItems`, cartItem);
@@ -253,6 +262,15 @@ export const searchProduct = async (value, setProducts)=>{
   try {
     const response = await api.get(`/api/product/search/${value}`);
     setProducts(response.data.products);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const buyNowStripe = async (products, email) =>{
+  try {
+    const response = await api.post('/api/product/payment', {products, 'email': email});
+    window.location.href = response.data.session.url;
   } catch (error) {
     console.log(error);
   }

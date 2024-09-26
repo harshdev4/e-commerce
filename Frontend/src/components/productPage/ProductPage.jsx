@@ -1,17 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styles from './ProductPage.module.css';
-import { useParams } from 'react-router-dom';
-import { getProductById, setCartItem } from '../../base/api';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { buyNowStripe, getProductById, setCartItem } from '../../base/api';
 import ImgSlider from '../imageSlider/ImgSlider';
 import { AuthUserState } from '../../context/authUserContext';
 import Loader from '../loader/Loader';
 
 const ProductPage = () => {
+  const navigate = useNavigate();
 
   const {state} = useContext(AuthUserState);
   
   const { productId } = useParams();
   const [productData, setProductData] = useState();
+  const [isPaymentLoading, setIsPaymentLoading] = useState(false);
   const [cartState, setCartState] = useState("add to cart")
   const [images, setImages] = useState([]);
   let today = new Date(Date.now() + 4*24*60*60*1000);
@@ -56,8 +58,14 @@ const ProductPage = () => {
     }
   }
 
+  const saveSummary = () =>{
+    navigate('/checkout/product/summary/66e0473866e04738aa582c7fc5eb889baa582c7fc5eb889b');
+    localStorage.setItem('summaryProduct', JSON.stringify({...productData, quantity: 1}));
+  }
+
   return (
     <>
+    {isPaymentLoading && <Loader/>}
     {!productData && <Loader/>}
     {productData &&
     <div className={`${styles.productPage} paddingSide `}>
@@ -65,7 +73,7 @@ const ProductPage = () => {
         <div className={styles.gridLeft}><ImgSlider images={images}/>
           <div className={styles.actionBtnContainer}>
             <button className={`${styles.actionBtn} ${styles.cartBtn}`} onClick={()=>addToCart(productData._id)}><i className="fa-solid fa-cart-shopping"></i> {cartState}</button>
-            <button className={`${styles.actionBtn} ${styles.buyBtn}`}><i className="fa-solid fa-bolt"></i> Buy now</button>
+            <button className={`${styles.actionBtn} ${styles.buyBtn} removeLinkEffect`} onClick={saveSummary}><i className="fa-solid fa-bolt"></i> Buy now</button>
           </div>
         </div>
         

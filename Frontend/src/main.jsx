@@ -19,6 +19,9 @@ import PopupStateProvider from "./context/popupContext.jsx";
 import HomePage from "./components/pages/homePage/HomePage.jsx";
 import ProductPage from "./components/productPage/ProductPage.jsx";
 import CategoriesPage from "./components/pages/categoryPage/CategoriesPage.jsx";
+import SuccessPayment from "./components/pages/payment/SuccessPayment.jsx";
+import CancelPayment from "./components/pages/payment/CancelPayment.jsx";
+import BuyPage from "./components/pages/buyPage/BuyPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +71,18 @@ const router = createBrowserRouter([
       {
         path: "/category/:category",
         element: <CategoriesPage/>
+      },
+      {
+        path: "/checkout/product/summary/66e0473866e04738aa582c7fc5eb889baa582c7fc5eb889b",
+        element: <BuyPage/>
+      },
+      {
+        path: "/payment/success/:productIds",
+        element: <SuccessPayment/>
+      },
+      {
+        path: "/payment/cancel",
+        element: <CancelPayment/>
       },
     ],
   },
