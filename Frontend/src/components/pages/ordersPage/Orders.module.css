@@ -1,0 +1,49 @@
+.orderContainer{
+    display: grid;
+    gap: 30px;
+    width: 70%;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.order{
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 100px auto;
+    gap: 50px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgb(190, 190, 190);
+}
+
+.orderImages{
+    width: 100px;
+    display: grid;
+    gap: 2px;
+}
+
+.orderImg{
+    width: 100%;
+    border: 1px solid rgba(115, 117, 117, 0.432);
+}
+
+.textArea{
+    display: grid;
+    gap: 7px;
+}
+
+.orderTitle{
+    font-weight: 500;
+}
+
+.deliveryDate{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+@media (max-width: 599px){
+    .orderContainer{
+        width: 100%;
+    }
+}

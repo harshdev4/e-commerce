@@ -33,7 +33,7 @@ const SuccessPayment = () => {
         </div>
         <p className={styles.thnkMsg}>Thank you for ordering!</p>
         <div className={styles.btnContainer}>
-          <Link to='#' className={`removeLinkEffect ${styles.btn} ${styles.orderBtn}`}>View Order</Link>
+          <Link to='/orders' className={`removeLinkEffect ${styles.btn} ${styles.orderBtn}`}>View Order</Link>
           <Link to='/' className={`removeLinkEffect ${styles.btn} ${styles.continueBtn}`}>Continue Shopping</Link>
         </div>
       </div>

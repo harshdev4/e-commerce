@@ -62,7 +62,7 @@ const Header = () => {
                 <Link to='/signUp' className="removeLinkEffect">Sign up</Link></>}
                 <Link to='/myProfile' className="removeLinkEffect">My Profile</Link>
                 {state.isAdmin && <Link to='/admin/dashboard' className="removeLinkEffect">Dashboard</Link>}
-                {!state.isAdmin && <Link to='/myOrders' className="removeLinkEffect">My Orders</Link>}
+                {!state.isAdmin && <Link to='/orders' className="removeLinkEffect">My Orders</Link>}
                 {!state.isAdmin && <Link to='/cart' className="removeLinkEffect">Cart</Link>}
                 {state?.userName && <a href="#logout" className="removeLinkEffect" onClick={()=> {popupContext.setPopupState(true); popupContext.setConfirmMsg(`Are you sure you want to logout?`); popupContext.setButtonTitle('Logout'); popupContext.setConfirmAction(()=> ()=>logoutUser(dispatch, navigate))}}>Logout</a>}
               </div>

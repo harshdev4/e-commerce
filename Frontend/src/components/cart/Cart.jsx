@@ -87,7 +87,7 @@ function Cart() {
   return (
     <div className={`${styles.cartPage} paddingSide`}>
       {isPaymentLoading && <Loader/>}
-      <h1 className={styles.cartHeading}>My Cart</h1>
+      <h1 className='heading'>My Cart</h1>
 
       <div className={styles.deliveryAddContainer}>
         <h3 className={styles.deliverHeading}>Deliver to:</h3>

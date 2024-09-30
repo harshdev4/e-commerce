@@ -5,6 +5,7 @@ const cors = require('cors');
 const authRouter = require('./routes/auth');
 const userApiRouter = require('./routes/userApi');
 const productRouter = require('./routes/productRoute');
+const orderRouter = require('./routes/orderRoute');
 const nodemailer = require('nodemailer');
 
 const app = express();
@@ -25,6 +26,8 @@ app.use('/auth', authRouter);
 app.use('/api/user', userApiRouter);
 
 app.use('/api/product', productRouter);
+
+app.use('/api/order', orderRouter);
 
 // Start server
 const PORT = process.env.PORT || 3000;

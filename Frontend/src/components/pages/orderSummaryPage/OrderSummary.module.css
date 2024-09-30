@@ -1,0 +1,67 @@
+.orderView{
+    width: 70%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+}
+
+.order, .middleDetails{
+    background-color: white;
+    padding: 13px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgb(190, 190, 190);
+}
+
+.top{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: center;
+}
+
+.name{
+    padding: 0 10px 0 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}
+
+.subTotalDiv{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 100px auto;
+}
+
+.totalHeading{
+    font-weight: 500;
+}
+
+.image{
+    width: 90%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.deliveryDate{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.deliveryAddContainer{
+    margin-top: 20px;
+}
+
+.deliverHeading{
+    font-size: 1rem;
+}
+
+.userName{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 599px){
+    .orderView{
+        width: 100%;
+    }
+}

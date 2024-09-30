@@ -275,3 +275,21 @@ export const buyNowStripe = async (products, email) =>{
     console.log(error);
   }
 }
+
+export const getOrders = async (setOrders)=>{
+  try {
+    const response = await api.get(`/api/order/getOrders`);
+    setOrders(response.data.orders);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const getOrder = async (orderId, setOrderDetails)=>{
+  try {
+    const response = await api.get(`/api/order/getOrder/${orderId}`);
+    setOrderDetails(response.data.order);
+  } catch (error) {
+    console.log(error);
+  }
+}

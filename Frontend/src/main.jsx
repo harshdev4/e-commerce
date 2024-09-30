@@ -22,6 +22,8 @@ import CategoriesPage from "./components/pages/categoryPage/CategoriesPage.jsx";
 import SuccessPayment from "./components/pages/payment/SuccessPayment.jsx";
 import CancelPayment from "./components/pages/payment/CancelPayment.jsx";
 import BuyPage from "./components/pages/buyPage/BuyPage.jsx";
+import Orders from "./components/pages/ordersPage/Orders.jsx";
+import OrderSummary from "./components/pages/orderSummaryPage/OrderSummary.jsx";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +85,14 @@ const router = createBrowserRouter([
       {
         path: "/payment/cancel",
         element: <CancelPayment/>
+      },
+      {
+        path: "/orders",
+        element: <Orders/>
+      },
+      {
+        path: "/order-details/:orderId",
+        element: <OrderSummary/>
       },
     ],
   },
